@@ -1,0 +1,653 @@
+/* ==========================================
+   🌸 FLORENTICA DESIGN SYSTEM
+   ========================================== */
+
+/* 1. VARIABLES Y COLORES */
+:root {
+    /* BACKGROUND */
+    /* Color de fondo de toda la pagina */
+    --f-bg: #fdf5ff;
+    --f-bg-nav: #fbebff;
+
+    /* BOTONES */
+    /* Colo boton de perfil */
+    --f-pink: #ff69b4;
+    /* Color hover de boton perfil */
+    --f-pink-hover: #ff82c0;
+    
+    /* Color de boton premium */
+    --f-gold-pre: #F6C324   ;
+    /* Color hover de boton premium */
+    --f-gold-hover: #ffcd28;
+    
+    /* Color negro */
+    --f-dark: #2D2D2D;
+    
+    /* Color boton cerrar sesion */
+    --f-red: #ff3a3a;
+    /* Color hover de cerrar sesion */
+    --f-red-hover: #ff6b6b;
+
+    --f-form: #ffffff;
+
+    /* Color texto */
+    
+    /* Color hover de cerrar sesion */
+    --f-green: #23cb23;
+    --f-green-hover: #56d656;
+    /* 1. VARIABLES Y COLORES */
+
+}
+
+/* 2. RESET GLOBAL (Lo que limpia los fondos blancos) */
+body { background-color: var(--f-bg) !important; margin: 0; }
+.card { background-color: transparent !important; border: none !important; }
+
+.text-flower-pink{
+color: var(--f-pink);
+}
+
+.text-flower-red{
+color: var(--f-red);
+}
+
+
+.text-flower-green{
+color: var(--f-green);
+}
+.text-flower-dark{
+color: var(--f-dark);
+}
+
+/* ==========================================
+   🌸 FLORENTICA NAV PREMIUM
+   ========================================== */
+    .nav-premium-dark { 
+        background-color: #0b0b0b !important; 
+        border-bottom: 2px solid #d4af37; 
+    }
+    .text-flower-gold { 
+        color: #d4af37 !important; 
+    }
+    .bg-flower-gold { 
+        background-color: #d4af37 !important; 
+    }
+    .logo-premium { 
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); 
+        text-decoration: none; 
+    }
+    .btn-premium-action { 
+        background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%); 
+        color: #000 !important; 
+        font-weight: 800; 
+        border: none; 
+    }
+    .btn-premium-status { 
+        border: 1px solid rgba(212, 175, 55, 0.3); 
+        font-weight: bold; 
+    }
+    .btn-premium-track {
+        background: #1a1a1a; 
+        color: #d4af37; 
+
+    }
+    .btn-premium-track:hover {
+        background: #1a1a1a; 
+        color: #d4af37; 
+        border: 1px solid #d4af37; 
+        font-weight: bold;
+
+    }
+    .animate-spin-slow { 
+        animation: fa-spin 3s infinite linear; 
+    }
+
+    .link-det{
+    text-decoration: none;
+    }
+   .card-standard-effect-gold {
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); /* Curva de movimiento más elegante */
+    position: relative;
+    top: 0;
+    background: #1a1a1a; /* Fondo oscuro profundo */
+    border: 1px solid rgba(212, 175, 55, 0.3) !important; /* Borde dorado sutil constante */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.card-standard-effect-gold:hover {
+    top: -10px; /* Elevación */
+    border: 1px solid var(--f-gold-pre) !important; /* El dorado se intensifica */
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2); /* Resplandor dorado suave */
+}
+
+/* Efecto de línea dorada superior que se expande al hacer hover */
+.card-standard-effect-gold::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--f-gold-pre);
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.card-standard-effect-gold:hover::before {
+    width: 100%; /* La línea "nace" del centro hacia los lados */
+}
+
+
+
+
+    /* Colores de marca Bollotech Elite */
+:root {
+    --gold-premium: #d4af37;
+    --gold-bright: #f1c40f;
+    --dark-elite: #121212;
+}
+
+/* Tarjeta Activa: El "Glow" Dorado */
+.card-elite-active {
+    background: linear-gradient(145deg, #1a1a1a, #000000);
+    position: relative;
+    border: 1px solid rgba(211, 175, 55, 0.5) !important;
+}
+
+.text-gold-shimmer {
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900 !important;
+    letter-spacing: 1px;
+}
+
+.bg-gold-premium {
+    background-color: var(--gold-premium) !important;
+}
+
+/* Efecto de brillo que recorre la tarjeta */
+.glow-effect {
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(-25deg);
+    transition: none;
+}
+
+.card-elite-active:hover .glow-effect {
+    left: 150%;
+    transition: 0.8s;
+}
+
+/* Icono Flotante */
+.floating-icon {
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Tarjeta Bloqueada: Estilo Intrigante */
+.card-elite-locked {
+    background-color: var(--f-gold-pre) !important;
+    border: 1px dashed #ccc !important;
+    transition: all 0.3s ease;
+}
+
+.card-elite-locked:hover {
+    background: #fffdf0;
+    border: 1px solid var(--gold-premium) !important;
+}
+
+.icon-locked {
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+
+.card-elite-locked:hover .icon-locked {
+    transform: scale(1.2) rotate(-10deg);
+}
+
+
+/* ==========================================
+   🌸 FLORENTICA LOGIN
+   ========================================== */
+
+    
+        .bg-login-florentica { 
+            min-height: 100vh;
+        }
+        .card-login {
+            border: none;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(244, 114, 182, 0.1);
+        }
+        .btn-login {
+            background-color: #f472b6; /* flower-pink */
+            border: none;
+            border-radius: 50px;
+            padding: 0.8rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-login:hover {
+            background-color: #db2777;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 114, 182, 0.3);
+        }
+        .form-control {
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+        }
+        /* Ajuste para que el botón del ojo combine con el estilo rosa */
+        .btn-outline-secondary {
+            border-color: #dee2e6;
+            color: #f472b6;
+            border-radius: 0 0.75rem 0.75rem 0;
+        }
+        .btn-outline-secondary:hover {
+            background-color: #fdf2f8;
+            border-color: #f472b6;
+            color: #db2777;
+        }
+        .form-control:focus {
+            border-color: #f472b6;
+            box-shadow: 0 0 0 0.25rem rgba(244, 114, 182, 0.15);
+        }
+        .text-flower-pink { color: #f472b6 !important; }
+    
+
+        
+/* ==========================================
+   🌸 FLORENTICA PAGINA PRINCIPAL CLIENTE
+   ========================================== */
+
+
+    .nav-normal { 
+        background-color: var(--f-bg-nav);
+        border-bottom: 2px solid var(--f-pink); 
+    }
+
+/* BOTONES*/
+
+/* Boton de perfil pag principal cliente*/
+.btn-florenticaPerfil {
+    background-color: var(--f-pink) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 0.8rem 1.5rem !important;
+    font-weight: bold !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Hover de boton de perfil pag principal cliente*/
+.btn-florenticaPerfil:hover {
+    background-color: var(--f-pink-hover) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(244, 114, 182, 0.3) !important;
+}
+
+
+
+/* Boton de premium pag principal cliente*/
+.btn-florenticaPremium {
+    background-color: var(--f-gold-hover) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 0.8rem 1.5rem !important;
+    font-weight: bold !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Hover de boton de premium pag principal cliente*/
+.btn-florenticaPremium:hover {
+    background-color: var(--f-gold-hover) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(244, 114, 182, 0.3) !important;
+}
+
+
+
+/* Boton de sesion pag principal cliente*/
+.btn-florenticaSesion {
+    background-color: var(--f-red) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 0.8rem 1.5rem !important;
+    font-weight: bold !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover de boton de sesion pag principal cliente*/
+.btn-florenticaSesion:hover {
+    background-color: var(--f-red-hover) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(244, 114, 182, 0.3) !important;
+}
+
+
+/* Boton de sesion pag principal cliente*/
+.btn-carrito {
+    background-color: var(--f-red) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 14px !important;
+    font-weight: bold !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover de boton de sesion pag principal cliente*/
+.btn-carrito:hover {
+    background-color: var(--f-red-hover) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(244, 114, 182, 0.3) !important;
+}
+
+
+/* LOGO */
+.logo{
+    color:var(--f-pink-hover);
+}
+
+.logo:hover{
+    color:var(--f-pink);
+}
+
+
+/* --- Empieza Animación de Brinco para Florentica --- */
+
+/* 1. Definimos el movimiento */
+@keyframes brincoInfinito {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Altura del salto */
+    }
+}
+
+/* 2. Aplicamos el efecto a la clase */
+.card-brincar {
+    transition: all 0.3s ease; /* Suaviza la entrada y salida */
+    cursor: pointer;
+}
+
+.card-brincar:hover {
+    animation: brincar 0.8s infinite;
+}
+
+/* Estilo para el contenido interno si quieres que se vea más vivo */
+.card-brincar:hover .fs-1 {
+    display: inline-block; /* Crucial para que el movimiento funcione */
+    animation: brincoInfinito 0.8s ease-in-out infinite; /* Loop eterno */
+}
+
+/* --- Termina Animación de Brinco para Florentica --- */
+
+
+
+/* ==========================================
+   EFECTOS DEL CATÁLOGO (HOVER & LÍNEA ROSA)
+   ========================================== */
+
+.card-standard-effect {
+    transition: all 0.4s;
+    border-top: 0px solid var(--f-pink) !important; /* Empezamos sin línea visible */
+    position: relative;
+    top: 0;
+}
+
+/* Efecto al pasar el mouse por la tarjeta */
+.card-standard-effect:hover {
+    top: -8px; /* Elevación suave */
+    box-shadow: 0 15px 35px rgba(244, 114, 182, 0.2) !important; /* Sombra rosada difuminada */
+}
+
+/* Estilo para el precio (usando tu clase text-flower-green o similar) */
+.text-flower-pink-card {
+    font-size: 29px;
+    color:var(--f-pink) ; /* Un verde bosque que combina con el rosa */
+    letter-spacing: -1px;
+}
+
+/* Estilo para el precio (usando tu clase text-flower-green o similar) */
+.text-flower-green {
+    color:var(--f-green) ; /* Un verde bosque que combina con el rosa */
+    letter-spacing: -1px;
+}
+
+
+
+
+/* --- Estilos Globales de Alertas Florentica --- */
+
+.alert-florentica-success {
+    background-color: #f0fdf4 !important; /* Un verde más suave y moderno */
+    color: #166534 !important;
+    border: none !important;
+    border-left: 5px solid #22c55e !important; /* El toque "tecnológico" */
+    border-radius: 8px !important;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1.25rem !important;
+    margin-top: 70px;
+}
+
+/* Badge sutil para el Status */
+.bg-success-soft {
+    background-color: #dcfce7;
+    border: 1px solid #bbf7d0;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.alert-florentica-success hr {
+    border-top: 1px solid #bbf7d0;
+}
+
+/* --- Variación para Errores (Inventario/Stock) --- */
+.alert-florentica-danger {
+    background-color: #fef2f2 !important;
+    color: #991b1b !important;
+    border-left: 5px solid #ef4444 !important;
+    border-radius: 8px !important;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1.25rem !important;
+}
+
+
+.btn-florenticaPerfil i, .btn-florenticaPremium i {
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+/* Color suave para el rol de Admin (opcional si quieres diferenciarlo más) */
+.bg-admin-purple {
+    background-color: #6366f1 !important;
+}
+/* linea 91, 78, 65 client-index */
+/* estilo de las tarjetas categorias */
+.card-categorias{
+    background-color: var(--f-form) !important;
+}
+
+/* linea 169 client-index */
+/* estilo del catalogo */
+.card-catalogo{
+    background-color: var(--f-form) !important;
+}
+
+/* linea 169 client-index */
+/* estilo del form de reseña */
+.card-reseña{
+    background-color: var(--f-form) !important;
+}
+
+.card-comentarios{
+    background-color: var(--f-form) !important;
+}
+
+
+
+/* Color Verde Esmeralda para el Seguimiento */
+.btn-seguimiento-nav {
+    background-color: var(--f-pink); 
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-seguimiento-nav:hover {
+    background-color: var(--f-pink-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.4);
+}
+
+/* Animación del camioncito */
+.animate-truck {
+    display: inline-block;
+    animation: drive 2s infinite linear;
+}
+@keyframes drive {
+    0% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    100% { transform: translateX(-2px); }
+}
+/* ==========================================
+   🌸 FLORENTICA PAGINA PEFIL
+   ========================================== */
+
+
+
+   
+/* ==========================================
+   🌸 FLORENTICA PAGINA CARRITO
+   ========================================== */
+
+/* Botón Sumar - Color de realce */
+.btn-sum {
+    color: white !important; /* Texto blanco para mejor contraste sobre rojo */
+    background-color: var(--f-green);
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-sum:hover {
+    background-color: var(--f-green-hover); /* Un rojo más intenso al pasar el mouse */
+    transform: scale(1.1);
+    color: white !important;
+}
+
+/* Botón Restar - Color neutro o sutil */
+.btn-res {
+    color: white !important;
+    background-color: var(--f-red); /* Gris oscuro para no competir con el de sumar */
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-res:hover {
+    background-color: var(--f-red-hover); 
+    transform: scale(1.1);
+    color: white !important;
+}
+
+/* Estado Deshabilitado (Cuando llegas a 1 o al límite de stock) */
+.btn-sum:disabled, .btn-res:disabled {
+    background-color: #222 !important;
+    color: #555 !important;
+    cursor: not-allowed;
+    transform: scale(1) !important;
+}
+.btn-pago{
+    color: white;
+    background-color: var(--f-pink);
+}
+.btn-pago:hover{
+    color: white;
+    background-color: var(--f-pink-hover);
+}
+
+   /* Estilos base para los iconos */
+    .step-icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        z-index: 2;
+        transition: 0.8s;
+        font-size: 1.2rem;
+    }
+
+    .step-text {
+        font-size: 0.85rem;
+    }
+
+    /* AJUSTES PARA CELULAR (Pantallas menores a 576px) */
+    @media (max-width: 576px) {
+        .step-icon {
+            width: 50px !important;  /* Iconos más pequeños */
+            height: 50px !important;
+            font-size: 0.9rem !important;
+        }
+
+        .step-text {
+            font-size: 0.65rem !important; /* Texto más pequeño para que no se encime */
+            letter-spacing: -0.5px !important;
+        }
+
+        .progress {
+            height: 6px !important;
+        }
+    }
+/* ==========================================
+   🌸 FLORENTICA PAGINA ESTATUS
+   ========================================== */
+
+   .bg-compra{
+    background-color:var(--f-pink);
+}
+    .step div { 
+        width: 55px; 
+        height: 55px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        z-index: 2; 
+        ransition: 0.8s;
+    }
+.btn-regresar{
+    color: white;
+    background-color: var(--f-pink);
+}
+.btn-regresar:hover{
+    color: white;
+    background-color: var(--f-pink-hover);
+}

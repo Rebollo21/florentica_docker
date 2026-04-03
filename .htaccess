@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Redirige todo el tráfico a la carpeta public de forma invisible
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+php_value display_errors On

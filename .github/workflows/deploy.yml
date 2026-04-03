@@ -1,0 +1,41 @@
+name: Deploy Florentica to AWS
+
+on:
+  push:
+    branches: [ main ] # Se activa cuando subes cambios a la rama main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_HOST }}
+          username: ${{ secrets.AWS_USER }}
+          key: ${{ secrets.AWS_SSH_KEY }}
+          script: |
+            # 1. Instalar Docker si no existe (por si el User Data falló)
+            if ! [ -x "$(command -v docker)" ]; then
+              sudo apt-get update
+              sudo apt-get install -y docker.io docker-compose
+              sudo systemctl start docker
+              sudo usermod -aG docker ubuntu
+            fi
+
+            # 2. Clonar o actualizar el proyecto de Florentica
+            if [ ! -d "~/florentica" ]; then
+              git clone https://github.com/Rebollo21/florentica_docker.git ~/florentica
+            fi
+            
+            cd ~/florentica
+            git pull origin main
+            
+            # 3. Levantar los contenedores de Laravel y MySQL
+            docker-compose up -d --build
+            
+            # 4. Limpieza de imágenes viejas
+            docker image prune -f

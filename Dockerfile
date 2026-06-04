@@ -32,5 +32,5 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 # 9. Configurar el puerto dinámico de Render
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
-# 10. Iniciar Apache
-CMD ["apache2-foreground"]
+# 10. Script de arranque: Ejecutar migraciones y luego iniciar Apache
+CMD php artisan migrate --force && apache2-foreground
